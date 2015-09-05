@@ -1,0 +1,12 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+{% if latest_question_list %}
+	<ul>
+	{% for question in latest_question_list %}
+		<!-- <li><a href="/polls/{{question.id}}/">{{ question.question_text }}</a></li> 硬编码写法，不灵活-->
+		<li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li> <!-- 对应polls/urls.py中名为'detail'的url 。polls是命名空间,在mysite/urls.py中定义,确保唯一-->
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>No polls are available. </p>
+{% endif %}
