@@ -31,13 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'django.contrib.admin',#站点管理
-    'django.contrib.auth',#认证系统
-    'django.contrib.contenttypes',#用于内容类型的框架
-    'django.contrib.sessions',#会话框架
-    'django.contrib.messages',#消息框架
-    'django.contrib.staticfiles',#管理静态文件的框架
-    'polls'
+    'django.contrib.admin',  # 站点管理
+    'django.contrib.auth',  # 认证系统
+    'django.contrib.contenttypes',  # 用于内容类型的框架
+    'django.contrib.sessions',  # 会话框架
+    'django.contrib.messages',  # 消息框架
+    'django.contrib.staticfiles',  # 管理静态文件的框架
+    'polls',
+    'learn',
+    'blog',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -56,7 +58,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],#DIRS 是加载Django模板时检查的一个文件系统目录列表；它是一个搜索路径。
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # DIRS 是加载Django模板时检查的一个文件系统目录列表；它是一个搜索路径。
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,12 +79,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', #数据库引擎
-        'NAME': 'mysite',                       #数据库名
-        'USER': 'root',                       #用户名
-        'PASSWORD': 'root',                   #密码
-        'HOST': '',                           #数据库主机，默认为localhost
-        'PORT': '',                           #数据库端口，MySQL默认为3306
+        'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
+        'NAME': 'mysite',  # 数据库名
+        'USER': 'root',  # 用户名
+        'PASSWORD': 'root',  # 密码
+        'HOST': '',  # 数据库主机，默认为localhost
+        'PORT': '',  # 数据库端口，MySQL默认为3306
         'OPTIONS': {
             'autocommit': True,
         },

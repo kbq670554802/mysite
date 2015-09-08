@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}kbq{% endblock %}
+{% block content%}
+{% include 'learn/ad.html' %}
+这里是首页
+    <br/>
+    显示字符串<br/>
+    {{ string }}
+     <br/>
+    遍历list：<br/>
+    {% for i in list %}
+        {{ i }}
+    {% endfor %}
+     <br/>
+    显示字典内容： <br/>
+    站点：{{ dict.site }} 内容：{{ dict.content }}
+    <br/>
+    {% for key, value in dict.items %}
+    {{ key }}: {{ value }}
+{% endfor %}
+
+{% endblock %}
